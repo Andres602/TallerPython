@@ -1,4 +1,4 @@
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 
 #Configurar el gpio
@@ -8,11 +8,11 @@ btn=12
 GPIO.setup(btn, GPIO.IN)
 
 #Configuramos para escuchar el franco
-GPIO.add_event_detect(channel, GPIO.RISING, bouncetime=200)
+GPIO.add_event_detect(btn, GPIO.RISING)
 #Esperamos  por 5 segundos
 time.sleep(5)
 #Comprobamos si se presiono btn durante ese tiempo
-if GPIO.event_detected(channel):
+if GPIO.event_detected(btn):
     print('Button pressed')
 
 #Limpiamos los puertos
