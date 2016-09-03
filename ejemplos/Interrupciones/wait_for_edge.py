@@ -7,7 +7,7 @@ btn=12
 GPIO.setup(btn, GPIO.IN)
 
 #Esperamos por 5 segundos que se presione el btn
-press=GPIO.wait_for_edge(btn, GPIO_RISING, timeout=5000)
+press=GPIO.wait_for_edge(btn, GPIO.RISING, timeout=5000)
 if press is None:
 	print('Timeout')
 else

@@ -6,9 +6,6 @@ import time
 def callback_uno(channel):
 	print('Callback uno')
 
-def callback_dos(channel):
-	print('Callback dos')
-
 #Variables
 led=12 	#asignamos el pin 12 a la variable led
 btn=13 	#asignamos el pin 13 a la variable btn
@@ -26,9 +23,7 @@ GPIO.setup(btn, GPIO.IN)
 #Escuchar franco de subida
 GPIO.add_event_detect(btn, GPIO.RISING, bouncetime=200) 	 	
 #Asignamos Callback uno a btn
-GPIO.add_event_callback(btn, my_callback_one)	
-#Asignamos Callback dos a btn
-GPIO.add_event_callback(btn, my_callback_two)	
+GPIO.add_event_callback(btn, callback_uno)	
 
 try:
     while True:
